@@ -8,7 +8,7 @@ import re
 # considered SQL-specific; other storage systems may choose to use different
 # lookup types.
 QUERY_TERMS = {
-    'exact', 'iexact', 'contains', 'icontains', 'gt', 'gte', 'lt', 'lte', 'in',
+    'exact', 'iexact', 'contains', 'icontains', 'gt', 'gte', 'lt', 'lte', 'in', 'iin',
     'startswith', 'istartswith', 'endswith', 'iendswith', 'range', 'year',
     'month', 'day', 'week_day', 'hour', 'minute', 'second', 'isnull', 'search',
     'regex', 'iregex',

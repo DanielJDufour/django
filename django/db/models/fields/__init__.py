@@ -759,7 +759,7 @@ class Field(RegisterLookupMixin):
             return value
         elif lookup_type in ('exact', 'gt', 'gte', 'lt', 'lte'):
             return self.get_prep_value(value)
-        elif lookup_type in ('range', 'in'):
+        elif lookup_type in ('range', 'in','iin'):
             return [self.get_prep_value(v) for v in value]
         return self.get_prep_value(value)
 
@@ -791,7 +791,7 @@ class Field(RegisterLookupMixin):
         elif lookup_type in ('exact', 'gt', 'gte', 'lt', 'lte'):
             return [self.get_db_prep_value(value, connection=connection,
                                            prepared=prepared)]
-        elif lookup_type in ('range', 'in'):
+        elif lookup_type in ('range', 'in', 'iin'):
             return [self.get_db_prep_value(v, connection=connection,
                                            prepared=prepared) for v in value]
         elif lookup_type == 'isnull':
